@@ -1,0 +1,145 @@
+.header {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+}
+
+.header .header-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0 50px;
+  align-items: center;
+  width: 70%;
+}
+
+.header .header-left {
+  width: 30%;
+}
+
+.header-right .header-right-hotline {
+  padding-top: 5px;
+}
+
+.header-right .header-right-hotline span {
+  color: #03acf2;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.7542;
+  display: inline-block;
+}
+
+.header-right .header-right-hotline span strong {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.header-right-guide {
+  color: #03acf2;
+  opacity: 0.7542;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.icon-size {
+  width: 19px;
+  height: 19px;
+}
+
+.header-right-booking {
+  display: flex;
+  align-items: center;
+}
+
+.header-right-booking button.header-right-btn {
+  display: inline-block;
+  padding: 11px 45px;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  background-color: #03acf2;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  transition: 0.2s linear;
+  font-weight: 500;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.header-right button.header-right-btn:hover {
+  opacity: 0.7542;
+}
+
+.search-icon {
+  cursor: pointer;
+}
+
+.navbar-nav.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 5px;
+  width: 100%;
+}
+
+.my_extra_menu_class ul.menu li.menu-item a,
+.nav-list .nav-item a.nav-link {
+  color: #01579b !important;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  opacity: 0.7542 !important;
+  transition: 0.3s linear;
+}
+
+.nav-link.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
+}
+
+.my_extra_menu_class ul.menu li.menu-item a:hover,
+.nav-list .nav-item a.nav-link:hover {
+  color: #03acf2 !important;
+}
+
+#menu-item-1436,
+#menu-item-1438,
+#menu-item-1439 {
+  display: flex;
+  gap: 0 10px;
+  position: relative;
+}
+
+#menu-item-1432 ul.sub-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+@media (max-width: 991px) {
+  .header {
+    display: none;
+  }
+}
