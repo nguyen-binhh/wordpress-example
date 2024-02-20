@@ -14,6 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/base.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/header.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/hero.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/features.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/specialist.css">
     <?php wp_head() ?>
 </head>
 

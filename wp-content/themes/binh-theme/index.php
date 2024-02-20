@@ -7,7 +7,9 @@
  */
 get_header();
 ?>
-<div class="d-flex">Banner</div>
+<div class="container">
+    content
+</div>
 
 <?php
 get_footer();
