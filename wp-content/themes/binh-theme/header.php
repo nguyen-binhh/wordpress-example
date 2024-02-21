@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/hero.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/features.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/specialist.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?> /assets/css/doctors.css">
     <?php wp_head() ?>
 </head>
 

@@ -1,5 +1,6 @@
 .specialist {
   padding: 0 16px;
+  margin-bottom: 40px;
 }
 
 .specialist_top {
@@ -67,13 +68,14 @@
 }
 .specialist_bottom-img {
   position: relative;
+  left: -10%;
   z-index: -1;
 }
 
 .specialist_bottom-content {
   position: absolute;
   top: 30%;
-  right: -12%;
+  right: -3%;
   width: 939px;
   height: 491px;
   border-radius: 20px;

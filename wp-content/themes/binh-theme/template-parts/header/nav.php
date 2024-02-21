@@ -64,7 +64,8 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light z-10" style="background-color: #FFF !important; padding: 0;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light z-10"
+    style="background-color: transparent !important; padding: 0;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

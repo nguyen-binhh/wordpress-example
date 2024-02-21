@@ -10,6 +10,7 @@ get_header();
 
 <div id="primary">
     <main id="main" class="site-main mt-5" role="main">
+        <!-- HERO -->
         <section class="hero">
             <div class="wrap-content">
                 <?php
@@ -45,6 +46,7 @@ get_header();
             </div>
         </section>
 
+        <!-- FEATURES -->
         <section class="features">
             <?php
             // Truy vấn để lấy các bài viết có category là "features" (ngoại trừ bài viết đầu tiên)
@@ -87,6 +89,7 @@ get_header();
             ?>
         </section>
 
+        <!-- SPECIALIST -->
         <section class="specialist">
             <div class="specialist_top">
                 <div class="specialist_heading">
@@ -118,7 +121,6 @@ get_header();
                         if ($specialist_posts_query->have_posts()) :
                             // Khởi tạo mảng để lưu trữ các bài viết
                             $posts_array = array();
-
                             while ($specialist_posts_query->have_posts()) : $specialist_posts_query->the_post();
                                 // Thêm bài viết vào mảng
                                 $posts_array[] = $post;
@@ -131,9 +133,10 @@ get_header();
                             foreach ($posts_array as $post) :
                                 setup_postdata($post);
                         ?>
-                        <div class="card" style="width: 33%; height: 100%;">
+                        <div class="card" style="width: 315px; height: 100%;">
                             <?php if (has_post_thumbnail()) : ?>
-                            <img src="<?php the_post_thumbnail_url('full'); ?>" class="img-fluid rounded-top" alt="">
+                            <img src="<?php echo the_post_thumbnail_url('full'); ?>" class="img-fluid rounded-top"
+                                alt="">
                             <?php endif; ?>
                             <div class="card-body">
                                 <h5 class="card-title"><?php the_title(); ?></h5>
@@ -151,27 +154,203 @@ get_header();
                         endif;
                         ?>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <!--  DOCTORS  -->
+        <section class="doctors">
+            <div class="doctor_background-left">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/decord.png"
+                    class="img-fluid rounded-top" alt="">
+            </div>
+            <div class="doctor_background-right">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/decord-2.png"
+                    class="img-fluid rounded-top" alt="">
+            </div>
+            <div class="doctors_wrap-top">
+                <div class="doctors_left">
+                    <div class="doctors_left-heading">
+                        <h2>Tham vấn <br>
+                            Bác sĩ</h2>
+                    </div>
+                    <div class="doctors_left-nav">
+                        <ul class="doctors_left-list">
+                            <li class="doctors_left-item">
+                                <span class="doctors_left-item-link active">Tất cả</span>
+                            </li>
+                            <li class="doctors_left-item">
+                                <span class="doctors_left-item-link">Dinh dưỡng</span>
+                            </li>
+                            <li class="doctors_left-item">
+                                <span class="doctors_left-item-link">Tim Mạch</span>
+                            </li>
+                            <li class="doctors_left-item">
+                                <span class="doctors_left-item-link">Tổng Quát</span>
+                            </li>
+                            <li class="doctors_left-item">
+                                <span class="doctors_left-item-link">Xương khớp</span>
+                            </li>
+                        </ul>
+                        <div class="doctors_left-desc">
+                            <span>Phòng khám đa khoa chúng tôi có những Bác sĩ hàng đầu trong lãnh vực<br> chăm sóc sức
+                                khoẻ
+                                nhi
+                                nói riêng và các lãnh vực khám bệnh nói chung.<br> Các Bác sĩ nổi tiếng với trên 20 kinh
+                                nghiệm...</span>
+                        </div>
+                    </div>
 
+                </div>
+
+                <div class="doctors_right">
+                    <?php
+                    // Truy vấn để lấy các bài viết có category là "doctors"
+                    $doctors_posts_query = new WP_Query(array(
+                        'category_name' => 'doctors', // Tên của category
+                        'posts_per_page' => -1 // Lấy tất cả các bài viết trong category
+                    ));
+
+                    if ($doctors_posts_query->have_posts()) :
+                        while ($doctors_posts_query->have_posts()) : $doctors_posts_query->the_post();
+                    ?>
+                    <div class="doctors_right-item">
+                        <div class="doctors_right-item-img">
+                            <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php echo get_the_post_thumbnail_url($post, 'full'); ?>" class="img-fluid"
+                                alt="">
+                            <?php endif; ?>
+                        </div>
+                        <div class="doctors_right-item-content">
+                            <h4 class="doctors_right-item-content-heading"><?php the_title(); ?></h4>
+                            <div class="doctors_right-item-content-desc"><?php the_content(); ?></div>
+                            <div class="doctors_right-item-content-bottom">
+                                <div class="doctors_right-item-content-bottom-rating">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                        class="img-fluid" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                        class="img-fluid" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                        class="img-fluid" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                        class="img-fluid" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                        class="img-fluid" alt="">
+                                </div>
+                                <div class="doctors_right-item-content-bottom-btn">
+                                    <a href="#">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/dot-btn.png"
+                                            class="img-fluid" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata(); // Reset lại truy vấn
+                    else :
+                        echo 'Không có bài viết trong category "doctors".';
+                    endif;
+                    ?>
+                </div>
+            </div>
+            <div class="doctor_wrap-banner">
+                <div class="doctor_wrap-banner-content">
+                    <div class="doctor_wrap-banner-content-left">
+                        <h2 class="doctor_wrap-banner-content-left-title">
+                            Sử dụng tiện ích đặt ký khám ?
+                        </h2>
+                        <h3 class="doctor_wrap-banner-content-left-heading">
+                            Cùng Phòng khám Nancy trải nghiệm dịch vụ mới.
+                        </h3>
+                    </div>
+                    <div class="doctor_wrap-banner-content-right">
+                        <div class="doctor_wrap-banner-content-right-btn">
+                            <button>Đăng ký khám ngay !</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor_wrap-comment">
+                <div class="doctor_wrap-comment-top">
+                    <h2 class="doctor_wrap-comment-top-heading">
+                        Niềm tin - Chất lượng - Hạnh phúc
+                    </h2>
+                    <p class="doctor_wrap-comment-top-desc">
+                        Chất lượng phục vụ tốt luôn là nền móng của niềm tin! Phòng khám Nhi khoa Nancy<br> chúng tôi
+                        luôn chú trọng chất lượng phục vụ và chất lượng chăm sóc sức khoẻ để<br> Quý khách hàng luôn
+                        vững tin vào phòng khám
+                    </p>
+                </div>
+                <div class="doctor_wrap-comment-bottom">
+                    <?php
+                    // Truy vấn để lấy các bài viết có category là "comments"
+                    $comments_posts_query = new WP_Query(array(
+                        'category_name' => 'comments', // Tên của category
+                        'posts_per_page' => -1 // Lấy tất cả các bài viết trong category
+                    ));
+
+                    if ($comments_posts_query->have_posts()) :
+                        while ($comments_posts_query->have_posts()) : $comments_posts_query->the_post();
+                    ?>
+                    <div class="doctor_wrap-comment-bottom-item">
+                        <div class="doctor_wrap-comment-bottom-item-rating">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                class="img-fluid" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                class="img-fluid" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                class="img-fluid" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png"
+                                class="img-fluid" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star-empty.png"
+                                class="img-fluid" alt="">
+                        </div>
+                        <div class="doctor_wrap-comment-bottom-item-desc">
+                            <?php the_content(); ?>
+                        </div>
+                        <div class="doctor_wrap-comment-bottom-item-user">
+                            <?php if (has_post_thumbnail()) : ?>
+                            <img src="<?php echo get_the_post_thumbnail_url($post, 'full'); ?>" class="img-fluid"
+                                alt="">
+                            <?php endif; ?>
+                            <div class="doctor_wrap-comment-bottom-item-user-name">
+                                Khách hàng<br>
+                                <?php the_title(); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata(); // Reset lại truy vấn
+                    else :
+                        echo 'Không có bài viết trong category "comments".';
+                    endif;
+                    ?>
+
+                </div>
+                <div class="doctor_wrap-comment-bottom-icon">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/icons/icon-slider.png"
+                        class="img-fluid rounded-top" alt="">
                 </div>
             </div>
         </section>
 
     </main>
 </div>
+<script>
+const links = document.querySelectorAll(".doctors_left-item-link");
 
-<!-- <?php get_footer() ?> -->
+links.forEach((link) => {
+    link.addEventListener("click", function(event) {
+        links.forEach((link) => {
+            link.classList.remove("active");
+        });
+        this.classList.add("active");
+    });
+});
+</script>
 
-<!-- <div class="card" style="width: 33%; height: 100%;">
-    <img src="<?php echo get_template_directory_uri() ?>/assets/images/specialist-img-1.png"
-        class="img-fluid rounded-top" alt="">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Chuyên khoa Tim mạch, phòng ngừa và bảo vệ trẻ em trước những vấn
-            đề
-            tim mạch</p>
-        <div class="card_btn">
-            <button>Xem chi tiết</button>
-        </div>
-    </div>
-</div> -->
+<?php get_footer() ?>
